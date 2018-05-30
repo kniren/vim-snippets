@@ -46,7 +46,16 @@ snippet fn "Generate new function"
 ${3:void} ${1:function}(${2:args});$0
 endsnippet
 
-# TODO: Add Lambda
+snippet main "Generate main function"
+int main(${1:int argc, char *argv[]}) {
+	${VISUAL}$0
+	return 0;
+}
+endsnippet
+
+snippet [] "Generate lambda function"
+[$1]($2) { $3 };$0
+endsnippet
 
 # Loops
 snippet fori "Generate int for loop"
