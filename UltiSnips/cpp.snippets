@@ -15,8 +15,8 @@ endsnippet
 
 # Classes/Structs/Namespaces.
 snippet cla "Generate class with include guards" b
-#ifndef ${2:PROJECT}_`!p snip.rv=t[1].upper()`_HPP
-#define $2_`!p snip.rv=t[1].upper()`_HPP
+#ifndef ${2:PROJECT}__`!p snip.rv=t[1].upper()`_HPP
+#define $2__`!p snip.rv=t[1].upper()`_HPP
 
 class ${1:ClassName} {
   private:
@@ -26,7 +26,7 @@ class ${1:ClassName} {
 	virtual ~$1();
 };
 
-#endif /* $2_`!p snip.rv=t[1].upper()`_HPP */$0
+#endif /* $2__`!p snip.rv=t[1].upper()`_HPP */$0
 endsnippet
 
 snippet struct "Generate new struct"
