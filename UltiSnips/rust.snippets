@@ -1,12 +1,78 @@
-#######################################################################
-#                            Rust Snippets                            #
-#######################################################################
+priority 0
 
-priority -50
+snippet match "match ..."
+match ${1:...} {
+    ${2:case} => ${3:expression}
+}
+endsnippet
 
+snippet case "case for match pattern"
+${2:case} => ${3:expression}
+endsnippet
+
+snippet caseok "case for Result pattern"
+Ok(${2:var}) => ${3:expression},
+Err(${4:err}) => ${5:expression},
+endsnippet
+
+snippet loop "loop {}" b
+loop {
+    ${0:${VISUAL}}
+}
+endsnippet
+
+snippet while "while {}" b
+while ${1:condition} {
+    ${0:${VISUAL}}
+}
+endsnippet
+
+snippet for "for {}" b
+for ${1:x} in ${1:y} {
+    $0
+}
+endsnippet
+
+snippet if "if {}" b
+if ${1:condition} {
+    ${0:${VISUAL}}
+}
+endsnippet
+
+snippet ife "if {} else {}" b
+if ${1:condition} {
+    ${2:${VISUAL}}
+} else {
+    $0
+}
+endsnippet
+
+snippet use "use ..." b
+use ${1:std::io};$0
+endsnippet
+
+snippet println "Println macro" i
+println!("$1");$0
+endsnippet
+
+snippet print "Print macro" i
+print!("$1");$0
+endsnippet
 
 snippet arg "Function Arguments" i
 ${1:a}: ${2:T}${3:, arg}
+endsnippet
+
+snippet fn "Generate new function"
+${3:pub }fn ${1:name}(${2:arg})${4} {
+    $0
+}
+endsnippet
+
+snippet main "Generate main function"
+fn main() {
+    $0
+}
 endsnippet
 
 snippet || "Closure, anonymous function (inline)" i
@@ -15,15 +81,15 @@ endsnippet
 
 snippet |} "Closure, anonymous function (block)" i
 ${1:move }|$2| {
-	$3
+    $3
 }
 endsnippet
 
 snippet macro "macro_rules!" b
 macro_rules! ${1:name} {
-	(${2:matcher}) => (
-		$3
-	)
+    (${2:matcher}) => (
+        $3
+    )
 }
 endsnippet
 
